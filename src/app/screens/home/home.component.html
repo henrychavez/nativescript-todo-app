@@ -1,0 +1,81 @@
+<GridLayout
+    class="p-24"
+    backgroundColor="#FEFEFE"
+    rows="auto, auto, *, auto"
+>
+    <Label
+        class="text-big"
+        text="Hello&#xA;Johny!"
+        textWrap="true"
+    ></Label>
+    <Label
+        row="1"
+        class="text-subtitle m-t-16"
+        color="#A1A1A1"
+    >
+        <FormattedString>
+            <Span text="You have "></Span>
+            <Span
+                [text]="todos | tasks"
+                color="#2B34E9"
+                class="font-weight-medium"
+            ></Span>
+            <Span text=" today"></Span>
+        </FormattedString>
+    </Label>
+    <CardView
+        row="2"
+        radius="16"
+        shadowOpacity="0.15"
+        shadowRadius="16"
+        margin="24 0"
+        backgroundColor="white"
+    >
+        <StackLayout padding="24 0">
+            <!--card-title-->
+            <StackLayout
+                orientation="horizontal"
+                horizontalAlignment="center"
+                marginBottom="24"
+            >
+                <Label
+                    class="mdi"
+                    [text]="'mdi-assignment' | fonticon"
+                ></Label>
+                <Label
+                    class="todo-list-title font-weight-bold"
+                    text="Todo"
+                    marginLeft="8"
+                ></Label>
+            </StackLayout>
+            <ListView
+                class="todo-list"
+                [items]="todos"
+                (itemTap)="showOptions($event)"
+                separatorColor="white"
+            >
+                <ng-template let-todo="item">
+                    <StackLayout class="todo-list-item">
+                        <Label
+                            [text]="todo.name"
+                            class="todo-list-item__primary-text font-weight-medium"
+                            verticalAlignment="center"
+                        ></Label>
+                        <Label
+                            text="Today, 7am"
+                            class="todo-list-item__secondary-text font-weight-normal"
+                            verticalAlignment="center"
+                        ></Label>
+                    </StackLayout>
+                </ng-template>
+            </ListView>
+        </StackLayout>
+    </CardView>
+    <Button
+        row="3"
+        class="btn btn-primary"
+        text="Add new task"
+        horizontalAlignment="center"
+        (tap)="addTodo()"
+    ></Button>
+</GridLayout>

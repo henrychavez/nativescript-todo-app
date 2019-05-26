@@ -1,0 +1,34 @@
+.todo-list-title {
+    font-size: 20;
+    letter-spacing: .125;
+    color: #383F4D;
+    text-align: center;
+    vertical-align: center;
+}
+
+.todo-list {
+    background-color: white;
+}
+
+.todo-list-item {
+    padding: 16 24;
+}
+
+.todo-list-item__primary-text {
+    font-size: 16;
+    letter-spacing: 0.075;
+}
+
+.todo-list-item__secondary-text {
+    font-size: 14;
+    letter-spacing: 0.125;
+    margin-top: 8;
+    color: #A1A1A1;
+}
+
+.todo-list-item__status {
+    font-size: 18;
+    text-align: center;
+    margin-right: 8;
+    color: #2B34E9;
+}

@@ -1,0 +1,47 @@
+@import "styles/variables";
+
+@import '~nativescript-theme-core/scss/index';
+
+.mdi {
+  font-family: $icon-font;
+  font-size: 24;
+  color: $primary;
+}
+
+.text-big {
+  font-size: 56;
+  font-family: $chivo-bold;
+  font-weight: 700;
+  color: $headings-color;
+}
+
+.text-subtitle {
+  font-size: 16;
+  font-family: $raleway-regular;
+  font-weight: 400;
+  letter-spacing: 0.075;
+}
+
+.font-weight-normal {
+  font-family: $raleway-regular;
+  font-weight: 400;
+}
+
+.font-weight-medium {
+  font-family: $raleway-medium;
+  font-weight: 500;
+}
+
+.font-weight-bold {
+  font-family: $raleway-bold;
+  font-weight: 700;
+}
+
+.btn-primary {
+  border-radius: 50%;
+  height: 44;
+  padding: 0 48;
+  font-size: 14;
+  font-family: $raleway-bold;
+  font-weight: 700;
+}

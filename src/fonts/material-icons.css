@@ -1,0 +1,7 @@
+.mdi-assignment:before {
+  content: "\ue85d";
+}
+
+.mdi-done:before {
+  content: "\ue876";
+}
