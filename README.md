@@ -11,10 +11,11 @@ Design inspired by [Johny Vino](https://dribbble.com/shots/4773052-Todo-List)
 2.  Complete todo
 3.  Pending task counter
 4.  Offline use
-5.  NGXS (state management)
-6.  Multiple device synchronization using Firebase (Coming soon)
-7.  Push Notifications (Coming soon)
-8.  Due date (Coming soon)
+5.  Font-icon support
+6.  NGXS (state management)
+7.  Multiple device synchronization using Firebase (Coming soon)
+8.  Push Notifications (Coming soon)
+9.  Due date (Coming soon)
 
 ### Prerequisites / Requirements
 
