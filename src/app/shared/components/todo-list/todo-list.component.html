@@ -1,0 +1,17 @@
+<StackLayout class="todo-list">
+    <StackLayout
+        *ngFor="let item of items; let i = index"
+        class="todo-list-item"
+        orientation="horizontal"
+    >
+        <ns-radio-button (tap)="emitTap(i)">
+            <Label
+                radioButtonText
+                [text]="item.title"
+                class="todo-list-item__text font-weight-medium text-primary"
+                verticalAlignment="center"
+            ></Label>
+        </ns-radio-button>
+    </StackLayout>
+</StackLayout>
+

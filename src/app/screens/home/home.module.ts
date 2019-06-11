@@ -2,6 +2,7 @@ import {
     NgModule,
     NO_ERRORS_SCHEMA,
 } from '@angular/core';
+import { TodoListModule } from '@app/shared/components/todo-list';
 import { registerElement } from 'nativescript-angular';
 import { NativeScriptCommonModule } from 'nativescript-angular/common';
 import { CardView } from 'nativescript-cardview';
@@ -20,6 +21,7 @@ registerElement('CardView', () => CardView);
     imports: [
         NativeScriptCommonModule,
         TNSFontIconModule,
+        TodoListModule,
     ],
     schemas: [NO_ERRORS_SCHEMA],
 })

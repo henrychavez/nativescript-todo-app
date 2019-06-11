@@ -1,0 +1,43 @@
+$size: 24;
+$checked-color: #2B34E9;
+$unchecked-color: white;
+
+@keyframes checked {
+  0% {
+    transform: scale(0);
+  }
+  75% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+.ns-radio-button {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  border-width: 1;
+  border-color: $checked-color;
+}
+
+.ns-radio-button--withText {
+  margin-right: 16;
+}
+
+.ns-radio-button--checked {
+  border-color: $unchecked-color;
+}
+
+.ns-radio-button__icon {
+  color: $checked-color;
+  transform: scale(0);
+}
+
+.ns-radio-button__icon--active {
+  animation-name: checked;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+}

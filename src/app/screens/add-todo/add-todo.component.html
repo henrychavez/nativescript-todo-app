@@ -1,4 +1,22 @@
-<Button
-    text="add-todo works!"
-    class="btn btn-primary"
-></Button>
+<ActionBar
+    title=" "
+    backgroundColor="white"
+    flat="true"
+>
+    <navigation-button text=""></navigation-button>
+</ActionBar>
+<StackLayout
+    class="p-24"
+    backgroundColor="#FEFEFE"
+>
+    <TextField
+        #textField
+        (returnPress)="createTodo()"
+        [(ngModel)]="todo.title"
+        backgroundColor="white"
+        class="add-todo-input h4"
+        hint="Enter new task..."
+        returnKeyType="done"
+    ></TextField>
+</StackLayout>
+

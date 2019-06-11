@@ -1,22 +1,22 @@
 <GridLayout
-    class="p-24"
+    class="p-y-24"
     backgroundColor="#FEFEFE"
     rows="auto, auto, *, auto"
 >
     <Label
-        class="text-big"
+        class="h2 p-x-24"
         text="Hello&#xA;Johny!"
         textWrap="true"
     ></Label>
     <Label
         row="1"
-        class="text-subtitle m-t-16"
+        class="text-subtitle m-t-16 p-x-24"
         color="#A1A1A1"
     >
         <FormattedString>
             <Span text="You have "></Span>
             <Span
-                [text]="todos | tasks"
+                [text]="(todos$ | async) | tasks"
                 color="#2B34E9"
                 class="font-weight-medium"
             ></Span>
@@ -28,10 +28,14 @@
         radius="16"
         shadowOpacity="0.15"
         shadowRadius="16"
-        margin="24 0"
+        elevation="16"
+        margin="24"
         backgroundColor="white"
     >
-        <StackLayout padding="24 0">
+        <GridLayout
+            rows="auto, *"
+            padding="24 0"
+        >
             <!--card-title-->
             <StackLayout
                 orientation="horizontal"
@@ -48,34 +52,29 @@
                     marginLeft="8"
                 ></Label>
             </StackLayout>
-            <ListView
-                class="todo-list"
-                [items]="todos"
-                (itemTap)="showOptions($event)"
-                separatorColor="white"
+            <ScrollView row="1">
+                <ns-todo-list
+                    [items]="todos$ | async"
+                    (itemSelected)="completeTask($event)"
+                ></ns-todo-list>
+            </ScrollView>
+            <StackLayout
+                *ngIf="(todos$ | async).length === 0"
+                row="1"
             >
-                <ng-template let-todo="item">
-                    <StackLayout class="todo-list-item">
-                        <Label
-                            [text]="todo.name"
-                            class="todo-list-item__primary-text font-weight-medium"
-                            verticalAlignment="center"
-                        ></Label>
-                        <Label
-                            text="Today, 7am"
-                            class="todo-list-item__secondary-text font-weight-normal"
-                            verticalAlignment="center"
-                        ></Label>
-                    </StackLayout>
-                </ng-template>
-            </ListView>
-        </StackLayout>
+                <Image
+                    src="res://no_pending_tasks"
+                    stretch="aspectFit"
+                ></Image>
+            </StackLayout>
+        </GridLayout>
     </CardView>
     <Button
         row="3"
         class="btn btn-primary"
         text="Add new task"
         horizontalAlignment="center"
-        (tap)="addTodo()"
+        (tap)="navigateToAddTodo()"
     ></Button>
 </GridLayout>
+

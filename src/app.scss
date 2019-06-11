@@ -8,11 +8,22 @@
   color: $primary;
 }
 
-.text-big {
-  font-size: 56;
-  font-family: $chivo-bold;
+.text-primary {
+  color: $primary;
+}
+
+.h2 {
+  font-size: 60;
+  font-family: $raleway-bold;
   font-weight: 700;
   color: $headings-color;
+}
+
+.h4 {
+  font-family: $raleway-bold;
+  font-weight: 700;
+  color: $headings-color;
+  font-size: 34;
 }
 
 .text-subtitle {
@@ -44,4 +55,5 @@
   font-size: 14;
   font-family: $raleway-bold;
   font-weight: 700;
+  letter-spacing: 0.075;
 }

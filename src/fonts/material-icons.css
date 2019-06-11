@@ -5,3 +5,11 @@
 .mdi-done:before {
   content: "\ue876";
 }
+
+.mdi-edit:before {
+  content: "\ue3c9";
+}
+
+.mdi-delete:before {
+  content: "\ue872";
+}

@@ -1,0 +1,20 @@
+<StackLayout
+    (tap)="toggleButton()"
+    orientation="horizontal"
+>
+    <StackLayout
+        [class.ns-radio-button--checked]="checked"
+        [class.ns-radio-button--withText]="radioButtonText?.length !== 0"
+        class="ns-radio-button"
+        verticalAlignment="center"
+        horizontalAlignment="center"
+    >
+        <Label
+            [text]="'mdi-done' | fonticon"
+            [class.ns-radio-button__icon--active]="checked"
+            class="mdi ns-radio-button__icon"
+            horizontalAlignment="center"
+        ></Label>
+    </StackLayout>
+    <ng-content></ng-content>
+</StackLayout>
