@@ -13,8 +13,14 @@
     ],
     "baseUrl": "./src",
     "paths": {
-      "@app/*": [
-        "./app/*"
+      "@app/screens/*": [
+        "./app/screen/*"
+      ],
+      "@app/shared/*": [
+        "./app/shared/*"
+      ],
+      "@app/store": [
+        "./app/store/index.ts"
       ]
     }
   },

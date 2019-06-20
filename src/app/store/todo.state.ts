@@ -1,3 +1,4 @@
+import { Todo } from '@app/shared/models';
 import {
     EmitterAction,
     Receiver,
@@ -6,7 +7,6 @@ import {
     State,
     StateContext,
 } from '@ngxs/store';
-import { Todo } from '@app/shared/models';
 
 @State<Todo[]>({
     name: 'todo',

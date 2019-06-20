@@ -2,8 +2,6 @@ import {
     NgModule,
     NO_ERRORS_SCHEMA,
 } from '@angular/core';
-import { ScreensModule } from '@app/screens/screens.module';
-import { AppStoreEngine } from '@app/shared/services';
 import { NgxsEmitPluginModule } from '@ngxs-labs/emitter';
 import { NgxsModule } from '@ngxs/store';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
@@ -12,7 +10,9 @@ import { TNSFontIconModule } from 'nativescript-ngx-fonticon';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ScreensModule } from './screens';
 import { States } from './store';
+import { AppStoreEngine } from './shared/services';
 
 @NgModule({
     bootstrap: [

@@ -4,12 +4,12 @@ import {
     ElementRef,
     ViewChild,
 } from '@angular/core';
+import { Todo } from '@app/shared/models';
+import { TodoState } from '@app/store';
 import {
     Emittable,
     Emitter,
 } from '@ngxs-labs/emitter';
-import { Todo } from '@app/shared/models';
-import { TodoState } from '@app/store';
 import { RouterExtensions } from 'nativescript-angular';
 import { TextField } from 'tns-core-modules/ui/text-field';
 
@@ -20,7 +20,7 @@ import { TextField } from 'tns-core-modules/ui/text-field';
 })
 export class AddTodoComponent implements AfterViewInit {
 
-    todo = new Todo();
+    todoTitle: string;
 
     @Emitter(TodoState.addTodo) addTodo: Emittable<Todo>;
 
@@ -40,9 +40,9 @@ export class AddTodoComponent implements AfterViewInit {
     createTodo() {
         this.router.back();
 
-        if (!this.todo.title) { return; }
+        if (!this.todoTitle) { return; }
 
-        this.addTodo.emit(this.todo);
+        this.addTodo.emit(new Todo(this.todoTitle));
 
     }
 
